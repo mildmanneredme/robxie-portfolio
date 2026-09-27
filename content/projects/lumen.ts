@@ -18,10 +18,11 @@ const lumen: Project = {
   onAccent: "#14120E",
   cover: {
     src: "/projects/lumen/cover.webp",
-    alt: "Lumen cover art",
+    alt: "Lumen cover: gold threads of light spreading across a dark city at night",
     width: 1024,
     height: 1536,
   },
+  loop: { src: "/projects/lumen/loop.mp4", poster: "/projects/lumen/art.webp" },
   features: [
     "Democracy versus oligarchy",
     "Technology as both oppressor and liberator",
@@ -41,6 +42,10 @@ const lumen: Project = {
     "Editorial critiques and consistency checks between drafts catch drift in names, plot and voice.",
   ],
   next: ["Draft 5 revision", "Beta readers"],
+  galleryTitle: "Cover studies",
+  gallery: [
+    { src: "/projects/lumen/study-b.webp", alt: "Cover study: a lone figure in a vast dark server hall under a shaft of gold light", width: 1024, height: 1536, caption: "Alternate cover study" },
+  ],
 };
 
 export default lumen;

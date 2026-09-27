@@ -17,10 +17,10 @@ const nightingale: Project = {
   accent: "#1F6F66",
   onAccent: "#FFFFFF",
   cover: {
-    src: "/projects/nightingale/site-desktop.webp",
-    alt: "Nightingale prototype homepage: Healthcare that feels human",
-    width: 1440,
-    height: 900,
+    src: "/projects/nightingale/card.webp",
+    alt: "Illustration: a phone showing a voice waveform beside a cup of tea, with a nightingale perched on the cup",
+    width: 1536,
+    height: 1024,
   },
   features: [
     "An AI voice and video intake, with photo upload where it helps",
@@ -41,6 +41,7 @@ const nightingale: Project = {
   ],
   next: ["Clinical partners", "Regulatory pathway", "MVP build"],
   gallery: [
+    { src: "/projects/nightingale/site-desktop.webp", alt: "Nightingale prototype homepage: Healthcare that feels human", width: 1440, height: 900, caption: "Prototype, desktop" },
     { src: "/projects/nightingale/site-mobile.webp", alt: "Nightingale prototype on a phone", width: 600, height: 1298, caption: "Prototype, mobile" },
   ],
 };

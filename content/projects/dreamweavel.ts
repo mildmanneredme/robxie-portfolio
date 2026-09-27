@@ -37,6 +37,7 @@ const dreamweavel: Project = {
     width: 1200,
     height: 1200,
   },
+  loop: { src: "/projects/dreamweavel/loop.mp4", poster: "/projects/dreamweavel/book-4.webp" },
   features: [
     "Personalised stories with a character creator and photo upload (moderated)",
     "Consistent characters on every page, from cover to back cover",

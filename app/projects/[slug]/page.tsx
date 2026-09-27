@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BookCover } from "@/components/BookCover";
 import { LoopVideo } from "@/components/LoopVideo";
 import { Reveal } from "@/components/Reveal";
 import { getProject, projects } from "@/content";
@@ -60,8 +61,8 @@ export default async function ProjectPage({ params }: Props) {
             )}
           </div>
           {isBook && (
-            <div className="relative mx-auto aspect-[2/3] w-56 overflow-hidden rounded-md shadow-2xl md:w-full">
-              <Image src={p.cover.src} alt={p.cover.alt} fill priority sizes="320px" className="object-cover" />
+            <div className="mx-auto w-56 md:w-full">
+              <BookCover project={p} sizes="320px" priority />
             </div>
           )}
         </div>

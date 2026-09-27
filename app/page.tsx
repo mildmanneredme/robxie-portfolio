@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { BookCover } from "@/components/BookCover";
 import Link from "next/link";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
@@ -49,8 +49,8 @@ export default function Home() {
             href="/projects/lumen"
             className="group grid items-center gap-8 rounded-2xl bg-[#14120e] p-6 text-[#f2eee6] ring-1 ring-line sm:p-10 md:grid-cols-[minmax(0,15rem)_1fr]"
           >
-            <div className="relative mx-auto aspect-[2/3] w-44 overflow-hidden rounded-md shadow-2xl transition duration-500 group-hover:-translate-y-1 md:w-full">
-              <Image src={lumen.cover.src} alt={lumen.cover.alt} fill sizes="240px" className="object-cover" />
+            <div className="mx-auto w-44 transition duration-500 group-hover:-translate-y-1 md:w-full">
+              <BookCover project={lumen} sizes="240px" />
             </div>
             <div>
               <p className="label text-[#c9a227]">{lumen.facts.map((f) => f.value).join(" · ")}</p>
