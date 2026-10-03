@@ -12,10 +12,10 @@ A showcase of what Robert has been building: AI products taken from idea to laun
 | Slug | Name | Group | Live link |
 |---|---|---|---|
 | `pipschatter` | PipsChatter | Live | https://www.pipschatter.com |
-| `dreamweavel` | Dreamweavel | Live (temporarily offline) | — |
+| `dreamweavel` | Dreamweavel | Live | https://dreamweavel.me |
 | `heardvine` | Heardvine | Live | https://heardvine.vercel.app |
 | `hellosoi` | HelloSoi | Live | https://hellosoi.vercel.app |
-| `nimblip` | NimBlip | In development | — |
+| `nimblip` | NimBlip | In development (closed beta) | — |
 | `nightingale` | Nightingale | In development | — |
 | `lumen` | Lumen | Writing | — |
 

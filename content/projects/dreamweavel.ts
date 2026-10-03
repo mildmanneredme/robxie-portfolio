@@ -22,13 +22,13 @@ const dreamweavel: Project = {
   pitch: "Just dream it: a picture book starring your child, in minutes.",
   summary:
     "Parents enter a child’s name, age and interests, add a custom character if they like, and choose an art style. Dreamweavel writes the story, illustrates every page with consistent characters, and narrates it with read-along highlighting that helps kids learn to read.",
-  status: "Temporarily offline",
+  status: "Live",
   facts: [
-    { label: "Status", value: "Launched · temporarily offline" },
+    { label: "Status", value: "Live" },
     { label: "Type", value: "Consumer web app" },
     { label: "Languages", value: "10" },
   ],
-  links: [],
+  links: [{ label: "Try Dreamweavel", href: "https://dreamweavel.me" }],
   accent: "#7C3AED",
   onAccent: "#FFFFFF",
   cover: {
@@ -58,7 +58,7 @@ const dreamweavel: Project = {
     "Image models are swappable; styles were chosen after side-by-side model reviews.",
     "Unit tests with Vitest and end-to-end tests with Playwright.",
   ],
-  next: ["Bring the service back online", "Printed books", "Animated book trailers", "A mobile app"],
+  next: ["Printed books", "Animated book trailers", "A mobile app"],
   galleryTitle: "Sample books and the eleven art styles",
   gallery: [
     ...["book-1", "book-10", "book-7"].map((b, i) => ({

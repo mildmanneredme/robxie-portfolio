@@ -7,9 +7,9 @@ const nimblip: Project = {
   pitch: "A cozy tycoon game: grow a one-desk AI startup into a courtyard campus.",
   summary:
     "My first Android game. You found an AI lab with $45k and one workstation, shape your model, set prices, and compete with rival labs for a growing market, weighing every hire, office move and investor’s strings against your runway.",
-  status: "In development",
+  status: "Closed beta",
   facts: [
-    { label: "Status", value: "In development · v0.10" },
+    { label: "Status", value: "Closed beta · v0.10" },
     { label: "Platform", value: "Android & desktop" },
     { label: "Engine", value: "Godot 4" },
   ],
