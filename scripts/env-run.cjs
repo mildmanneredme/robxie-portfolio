@@ -39,7 +39,15 @@ try {
       const dotenvx = require(moduleRoot);
       for (const file of files) {
         if (!fs.existsSync(file)) throw new Error('Missing file');
-        const loaded = dotenvx.config({ path: file, envKeysFile: path.join(path.dirname(file), '.env.keys'), processEnv: env, quiet: true, strict: true, noArmor: true, noNative: true });
+        // SDK diagnostics can include credential fragments on failure; emit only our generic error.
+        const saved = { log: console.log, warn: console.warn, error: console.error };
+        let loaded;
+        try {
+          console.log = console.warn = console.error = () => {};
+          loaded = dotenvx.config({ path: file, envKeysFile: path.join(path.dirname(file), '.env.keys'), processEnv: env, quiet: true, strict: true, noArmor: true, noNative: true });
+        } finally {
+          Object.assign(console, saved);
+        }
         if (loaded.error) throw new Error('Decryption failed');
         for (const [name, value] of Object.entries(loaded.parsed || {})) {
           if (!name.startsWith('DOTENV_PUBLIC_KEY') && value.startsWith('encrypted:')) throw new Error('Unresolved ciphertext');
