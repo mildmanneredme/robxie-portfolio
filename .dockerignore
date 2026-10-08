@@ -1,10 +1,4 @@
-.env
-.env*
-media-raw
-test-results
-playwright-report
-node_modules
-.next
+
 
 # Private local environment custody and Git-synced development snapshots
 **/.env.keys

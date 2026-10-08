@@ -3,14 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "npm run validate && next build",
-    "start": "next start",
+    "dev": "node scripts/env-run.cjs --npm-script dev:without-env",
+    "build": "node scripts/env-run.cjs --npm-script build:without-env",
+    "start": "node scripts/env-run.cjs --npm-script start:without-env",
     "typecheck": "tsc --noEmit",
     "validate": "node --experimental-strip-types scripts/validate-content.ts",
     "e2e": "playwright test",
-    "gen:images": "node --env-file=.env scripts/generate/images.mjs",
-    "gen:loops": "node --env-file=.env scripts/generate/loops.mjs"
+    "gen:images": "node scripts/env-run.cjs --npm-script gen:images:without-env",
+    "gen:loops": "node scripts/env-run.cjs --npm-script gen:loops:without-env",
+    "dev:without-env": "next dev",
+    "build:without-env": "npm run validate && next build",
+    "start:without-env": "next start",
+    "gen:images:without-env": "node scripts/generate/images.mjs",
+    "gen:loops:without-env": "node scripts/generate/loops.mjs",
+    "env:check": "node scripts/env-run.cjs --check"
   },
   "dependencies": {
     "next": "^16.3.6",

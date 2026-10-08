@@ -25,3 +25,11 @@ playwright-report/
 .env.keys
 .env.keys.*
 .secrets-sync/
+
+# Installed encrypted synchronization
+.env.machine
+.env.machine.*
+!**/.env.shared
+!**/.env.shared.*
+!/.secrets/
+!/.secrets/.env.shared.*

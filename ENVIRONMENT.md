@@ -1,7 +1,7 @@
 # Shared environment files with Dotenvx
 
 Workflow agreed 8 October 2026 (Asia/Bangkok). This guide and the ignore rules
-sync through Git. **Documentation is installed; secrets migration is pending.**
+sync through Git. **Encrypted local synchronization is installed; see the installed workflow below.**
 Existing local environment files, application commands, dependency versions and
 deployment configuration have not been converted by this documentation change.
 
@@ -173,3 +173,105 @@ automatic pull is not installed by this documentation.
 - [Encrypt command](https://dotenvx.com/docs/cli/encrypt/)
 - [Set command](https://dotenvx.com/docs/cli/set/)
 - [Run command and precedence options](https://dotenvx.com/docs/cli/run/)
+
+## Installed encrypted synchronization (9 October 2026)
+
+The authorized two-computer reconciliation is now installed. The selected
+shared files are named `.env.shared` and `.env.shared.*` so framework auto-loaders
+do not read ciphertext. These files and this launcher sync through Git.
+The earlier adoption examples describe the general workflow; use the installed
+filenames and commands below for this repository.
+
+1. On the other computer, pull the branch containing this change. Install the
+   same tool version: `npm install --global @dotenvx/dotenvx@2.33.0`.
+2. Transfer the matching keys from the Windows private custody directory
+   `C:\dev\.secrets\reconciled-keys` through a secure channel. Install each
+   matching `.env.keys` beside its encrypted file, including component folders.
+   Existing Mac keys alone may not cover newly generated Windows-only files or
+   renamed SHARED key labels. Never commit keys or copy the complete key directory
+   into a tracked folder. Git pull distributes configuration, not private keys.
+3. Run `node scripts/env-run.cjs --check` from the repository root. Component
+   package scripts expose `npm run env:check` from their own directory.
+   For a selected variant use `node scripts/env-run.cjs --file PATH --check`.
+4. Use the existing npm dev/build/start commands, which now decrypt configuration
+   in memory. Python and other local tools can be started with
+   `node scripts/env-run.cjs -- python YOUR_SCRIPT.py` (or the appropriate executable).
+   Do not run a secret-dependent tool directly against ciphertext.
+5. For future changes, pull first, privately edit and encrypt the selected shared
+   file with Dotenvx, verify the result, then commit only the ciphertext and push.
+   The second computer pulls and restarts its process. Avoid simultaneous edits;
+   ciphertext conflicts need a private per-variable reconciliation, never a
+   blind whole-file merge. Do not rotate keys during ordinary value updates.
+
+Local precedence is existing process environment, `.env.machine`,
+`.env.shared.local`, then `.env.shared`; earlier values win. Component files
+remain separate. Heardvine's pipeline and web use its root shared development
+consumer when no component file exists. Production, preview and test snapshots
+are preserved as explicitly selected variants and never loaded by default.
+`--file` selections load only the listed files, in the supplied order.
+
+Windows machine overrides are encrypted local `.env.machine` files and ignored.
+Mac overrides remain in the reconciliation vault for installation on the Mac;
+do not copy Windows paths to the Mac. Keep original snapshots until both computers
+have checked their applications. File modification times were the owner-selected
+recency proxy; per-variable edit history was unavailable. Newer blank values were
+preserved. Successful decryption does not prove provider credentials are valid.
+
+The launcher requires Node and the pinned global Dotenvx version locally. CI=true,
+CI=1 and VERCEL=1 commands retain provider-supplied environment settings and skip
+local decryption. Keys, local overrides and shared local snapshots are excluded
+from deployment upload contexts. Hosting secrets are managed separately.
+Decrypted values are never written back to disk by the launcher, and private keys
+are removed before launching the child process. Keep provider keys out of public
+frontend variable names and exported game builds.
+
+## Installed encrypted synchronization (9 October 2026)
+
+The authorized two-computer reconciliation is now installed. The selected
+shared files are named `.env.shared` and `.env.shared.*` so framework auto-loaders
+do not read ciphertext. These files and this launcher sync through Git.
+The earlier adoption examples describe the general workflow; use the installed
+filenames and commands below for this repository.
+
+1. On the other computer, pull the branch containing this change. Install the
+   same tool version: `npm install --global @dotenvx/dotenvx@2.33.0`.
+2. Transfer the matching keys from the Windows private custody directory
+   `C:\dev\.secrets\sync-installed-keys` through a secure channel. Install each
+   matching `.env.keys` beside its encrypted file, including component folders.
+   Existing Mac keys alone may not cover newly generated Windows-only files or
+   renamed SHARED key labels. Never commit keys or copy the complete key directory
+   into a tracked folder. Git pull distributes configuration, not private keys.
+3. Run `node scripts/env-run.cjs --check` from the repository root. Component
+   package scripts expose `npm run env:check` from their own directory.
+   For a selected variant use `node scripts/env-run.cjs --file PATH --check`.
+4. Use the existing npm dev/build/start commands, which now decrypt configuration
+   in memory. Python and other local tools can be started with
+   `node scripts/env-run.cjs -- python YOUR_SCRIPT.py` (or the appropriate executable).
+   Do not run a secret-dependent tool directly against ciphertext.
+5. For future changes, pull first, privately edit and encrypt the selected shared
+   file with Dotenvx, verify the result, then commit only the ciphertext and push.
+   The second computer pulls and restarts its process. Avoid simultaneous edits;
+   ciphertext conflicts need a private per-variable reconciliation, never a
+   blind whole-file merge. Do not rotate keys during ordinary value updates.
+
+Local precedence is existing process environment, `.env.machine`,
+`.env.shared.local`, then `.env.shared`; earlier values win. Component files
+remain separate. Heardvine's pipeline and web use its root shared development
+consumer when no component file exists. Production, preview and test snapshots
+are preserved as explicitly selected variants and never loaded by default.
+`--file` selections load only the listed files, in the supplied order.
+
+Windows machine overrides are encrypted local `.env.machine` files and ignored.
+Mac overrides remain in the reconciliation vault for installation on the Mac;
+do not copy Windows paths to the Mac. Keep original snapshots until both computers
+have checked their applications. File modification times were the owner-selected
+recency proxy; per-variable edit history was unavailable. Newer blank values were
+preserved. Successful decryption does not prove provider credentials are valid.
+
+The launcher requires Node and the pinned global Dotenvx version locally. CI=true,
+CI=1 and VERCEL=1 commands retain provider-supplied environment settings and skip
+local decryption. Keys, local overrides and shared local snapshots are excluded
+from deployment upload contexts. Hosting secrets are managed separately.
+Decrypted values are never written back to disk by the launcher, and private keys
+are removed before launching the child process. Keep provider keys out of public
+frontend variable names and exported game builds.
