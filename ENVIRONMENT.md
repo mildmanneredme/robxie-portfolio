@@ -190,6 +190,11 @@ filenames and commands below for this repository.
    Existing Mac keys alone may not cover newly generated Windows-only files or
    renamed SHARED key labels. Never commit keys or copy the complete key directory
    into a tracked folder. Git pull distributes configuration, not private keys.
+   For the Mac, use the prepared private `C:\dev\.secrets\sync-mac-keys`
+   bundle instead: it includes matching SHARED aliases and the Mac MACHINE keys.
+   The encrypted `mac-machine-overrides.zip` deliverable has application folders;
+   copy each folder's contents into the matching Mac repository. Files such as
+   `.env.machine.production` remain explicit selections, not default loads.
 3. Run `node scripts/env-run.cjs --check` from the repository root. Component
    package scripts expose `npm run env:check` from their own directory.
    For a selected variant use `node scripts/env-run.cjs --file PATH --check`.
