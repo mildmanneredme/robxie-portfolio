@@ -7,13 +7,13 @@ const lumen: Project = {
   pitch: "A techno-thriller about the day democracy finally becomes real.",
   summary:
     "Adrian Marsh helped build Silicon Valley, then walked away to teach ethics. When his name surfaces in a conspiracy he knows nothing about, he is pulled into a covert network of specialists (Tallinn, Berlin, Geneva, Reykjavik, Davos, Washington) building a single weapon: total, irreversible transparency. Hunting them are a council of billionaires and a meticulous contract killer.",
-  status: "Draft 4",
+  status: "Private reading room",
   facts: [
-    { label: "Status", value: "Draft 4" },
+    { label: "Access", value: "Reading room · access code required" },
     { label: "Genre", value: "Techno-thriller" },
     { label: "Length", value: "~147,000 words" },
   ],
-  links: [],
+  links: [{ label: "Visit reading room (access code required)", href: "https://lumen-phi-five.vercel.app/" }],
   accent: "#C9A227",
   onAccent: "#14120E",
   cover: {
@@ -33,7 +33,7 @@ const lumen: Project = {
   pipeline: [
     { step: "Plan", detail: "A living novel plan, research, and an author study of the genre." },
     { step: "Voice", detail: "A style guide calibrated from my own earlier essays, with numbered rewrite directives." },
-    { step: "Draft", detail: "Four full drafts, each in five parts." },
+    { step: "Draft", detail: "Versioned manuscript drafts, developed through successive revision passes." },
     { step: "Revise", detail: "Inline feedback markers are sorted by a Claude Code skill I wrote and applied consistently across plan, style guide and draft." },
     { step: "Compile", detail: "A Python script builds the manuscript into a formatted Word file." },
   ],
@@ -41,7 +41,6 @@ const lumen: Project = {
     "Writing a novel like software: versioned drafts, a spec (the plan), a style guide, and review passes.",
     "Editorial critiques and consistency checks between drafts catch drift in names, plot and voice.",
   ],
-  next: ["Draft 5 revision", "Beta readers"],
   galleryTitle: "Cover studies",
   gallery: [
     { src: "/projects/lumen/study-b.webp", alt: "Cover study: a lone figure in a vast dark server hall under a shaft of gold light", width: 1024, height: 1536, caption: "Alternate cover study" },

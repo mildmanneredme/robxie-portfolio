@@ -9,6 +9,8 @@ export type Media = {
 export type Loop = {
   src: string;
   poster: string;
+  /** Preserve the full frame for gameplay or other informative footage. */
+  fit?: "cover" | "contain";
 };
 
 export type Group = "live" | "dev" | "writing";

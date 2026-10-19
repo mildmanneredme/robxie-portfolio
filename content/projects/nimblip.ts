@@ -22,7 +22,7 @@ const nimblip: Project = {
     width: 1672,
     height: 941,
   },
-  loop: { src: "/projects/nimblip/loop.mp4", poster: "/projects/nimblip/key-art.webp" },
+  loop: { src: "/projects/nimblip/gameplay.mp4", poster: "/projects/nimblip/gameplay-poster.webp", fit: "contain" },
   features: [
     "Research across four model attributes: Capability, Speed, Reliability and Efficiency",
     "Four customer segments, and three rival labs with their own strategy AI",

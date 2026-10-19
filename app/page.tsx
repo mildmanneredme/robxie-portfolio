@@ -62,6 +62,19 @@ export default function Home() {
               </span>
             </div>
           </Link>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {lumen.links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-[#14120e] px-5 py-2.5 text-sm font-medium text-[#f2eee6] transition hover:opacity-90"
+              >
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
         </Reveal>
       </section>
 
