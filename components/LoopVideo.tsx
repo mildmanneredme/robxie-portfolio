@@ -22,6 +22,7 @@ export function LoopVideo({ loop, className = "" }: { loop: Loop; className?: st
     <video
       ref={ref}
       className={className}
+      style={loop.fit === "contain" ? { objectFit: "contain", backgroundColor: "#172944" } : undefined}
       src={loop.src}
       poster={loop.poster}
       muted
